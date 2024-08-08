@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .container{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    background-color: navy;
+    width: 100%;
+    }
+
+    .container form{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .container form p{
+        margin:20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container form p input{
+        height: 100%;
+    width: 380px;
+    border: 3px solid lightgray;
+    border-radius: 5px;
+    font-size: 18px;
+    }
+
+    .container form p label{
+        display: flex;
+    align-items: center;
+    color: whitesmoke;
+    }
+    
+    .container form button{
+    width: 20%;
+    margin-left: 40%;
+    outline: none;
+    height: 40px;
+    border-radius: 50px;
+    color: navy;
+    background-color: whitesmoke;
+    border: 3px solid navy;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 15px;
+  
+    }
+    
+  
+
+</style>
+<body>
+
+    <div class="container">
+        <form action="/upFees" method="post">
+            <input type="text" name="id" hidden value="<%=fees[0]._id %>">
+            <p> <label> No of days </label> <input type="number" name="fees" value="<%=fees[0].days%>" readonly></p>
+            <p> <label> Male Fees </label> <input type="number" name="maleFees" value="<%=fees[0].malefee%>"></p>
+            <p> <label> Female Fees</label>  <input type="number" name="femaleFees" value="<%=fees[0].femalefee%>"></p>
+            <button type="submit">Upadate</button>
+        </form>
+    </div>
+</body>
+</html>

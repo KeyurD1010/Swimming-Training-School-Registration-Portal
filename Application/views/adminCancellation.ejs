@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://kit.fontawesome.com/629bbf93e8.js" crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/admincancel.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="table-dark">#</th>
+                    <th class="table-dark">Username</th>
+                    <th class="table-dark">Name</th>
+                    <th class="table-dark">Email</th>
+                    <th class="table-dark">Gender</th>
+                    <th class="table-dark">Registration Date</th>
+                    <th class="table-dark">Expiry Date</th>
+                    <th class="table-dark">Cancellation Date</th>
+                    <th class="table-dark">Approve</th>
+                    <th class="table-dark">Deny</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% var j=1%>
+                    <%for(i in male) {%>
+
+                        <tr>
+                            <th>
+                                <%=j++%>
+                            </th>
+                            <th>
+                                <%=male[i].user.username%>
+                            </th>
+                            <th>
+                                <%=male[i].user.name%>
+                            </th>
+                            <th>
+                                <%=male[i].user.email%>
+                            </th>
+                            <th>
+                                <%=male[i].user.gender%>
+                            </th>
+                            <th>
+                                <%=male[i].user.date%>
+                            </th>
+                            <th>
+                                <%=male[i].user.expiry%>
+                            </th>
+                            <th>
+                                <%=male[i].cancelReqDate%>
+                            </th>
+
+                            <th>
+                                <form action="/aproveReq" method="post">
+                                    <input name="email" value="<%=male[i].user.email%>" hidden>
+                                    <input name="gender" value="<%=male[i].user.gender%>" hidden>
+                                    <input name="deleted" value="<%=male[i].cancelReqID%>" hidden>
+                                    <button type="submit" style="outline: none; background-color: white; border: 0px;"><i
+                                            class="fa-solid fa-check"></i></button>
+                                </form>
+                            </th>
+                            <th>
+                                <form action="/deleteReq" method="post">
+                                    <input name="email" value="<%=male[i].user.email%>" hidden>
+                                    <input name="gender" value="<%=male[i].user.gender%>" hidden>
+                                    <input name="deleted" value="<%=male[i].cancelReqID%>" hidden>
+                                    
+                                    <button type="submit" style="outline: none; background-color: white; border: 0px;"><i class="fa-solid fa-xmark"></i></button>
+                               </form>
+                            </th>
+
+
+                        </tr>
+
+                        <%}%>
+
+                            <%for(i in female) {%>
+
+                                <tr>
+                                    <th>
+                                        <%=j++%>
+                                    </th>
+                                    <th>
+                                        <%=female[i].user.username%>
+                                    </th>
+                                    <th>
+                                        <%=female[i].user.name%>
+                                    </th>
+                                    <th>
+                                        <%=female[i].user.email%>
+                                    </th>
+                                    <th>
+                                        <%=female[i].user.gender%>
+                                    </th>
+                                    <th>
+                                        <%=female[i].user.date%>
+                                    </th>
+                                    <th>
+                                        <%=female[i].user.expiry%>
+                                    </th>
+                                    <th>
+                                        <%=female[i].cancelReqDate%>
+                                    </th>
+
+                                    <th>
+
+                                    <form action="/aproveReq" method="post">
+                                            <input name="email" value="<%=female[i].user.email%>" hidden>
+                                            <input name="gender" value="<%=female[i].user.gender%>" hidden>
+                                            <input name="deleted" value="<%=female[i].cancelReqID%>" hidden>
+                                            <button type="submit" style="outline:none; background-color: white; border: 0px;"><i
+                                                    class="fa-solid fa-check"></i></button>
+
+                                    </form>
+                                    </th>
+                            <th>
+                                <form action="/deleteReq" method="post">
+                                    <input name="email" value="<%=female[i].user.email%>" hidden>
+                                    <input name="gender" value="<%=female[i].user.gender%>" hidden>
+                                    <input name="deleted" value="<%=female[i].cancelReqID%>" hidden>
+                                    <button type="submit" style="outline: none; background-color: white; border: 0px;"><i class="fa-solid fa-xmark"></i></button>
+                                </form>
+                                </th>
+
+                                </tr>
+
+                                <%}%>
+            </tbody>
+
+        </table>
+
+
+        <table>
+
+        </table>
+
+
+
+</body>
+
+</html>

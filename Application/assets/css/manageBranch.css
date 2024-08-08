@@ -1,0 +1,169 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body{
+    background-color: whitesmoke;
+    
+}
+
+.container{
+
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: navy;
+    width: 100%;
+}
+
+.addBranch{
+   margin-top:20px;
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+
+.addBranch button{
+  
+    margin-left: 45%;
+    width: 10%;
+    outline: none;
+    height: 40px;
+    border-radius: 50px;
+    color: navy;
+    background-color: whitesmoke;
+    border: 3px solid navy;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+.addBranch button:hover{
+    border: 3px solid whitesmoke;
+
+  }
+
+
+.update{
+    margin: 25px;
+    
+}
+
+select{
+    -webkit-appearance:none ;
+    -moz-appearance:none ;
+    appearance: none;
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    /* background-color: #90dfff ; */
+    color: navy;
+    border: 3px solid navy;
+    border-radius: 50px;
+    background-color: whitesmoke;
+    outline: none;
+    box-shadow: 0 0 20px rgba(20, 30, 30, 0.25);
+  }
+  
+  select::-ms-expand{
+    display: none;
+  }
+  
+  select:hover{
+      
+    border: 3px solid whitesmoke;
+
+  }
+  
+  select:focus{
+    outline: none;
+    box-shadow: 0 0 10px -1px navy;
+  }
+  
+  select option{
+    letter-spacing: 1.2px;
+    font-weight: 200;
+    font-size: 15px;
+    border: 3px solid navy;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: 0 0 20px rgba(20, 30, 30, 0.25);
+  }
+  select option:hover{
+    background-color: navy;
+    color: whitesmoke;
+    border: 3px solid whitesmoke;
+  }
+
+  .btn{
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+  }
+  
+.update button{
+   
+    width: 45%;
+    outline: none;
+    height: 40px;
+    border-radius: 50px;
+    color: navy;
+    background-color: whitesmoke;
+    border: 3px solid navy;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+.update button:hover{    border: 3px solid whitesmoke;
+    box-shadow: 0 0 10px -1px navy;
+    width: 42%;
+  }
+  
+
+
+.fees{
+    margin: 25px;
+}
+
+.fees button{
+    
+    width: 100%;
+    outline: none;
+    height: 40px;
+    border-radius: 50px;
+    color: navy;
+    background-color: whitesmoke;
+    border: 3px solid navy;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+.fees button:hover{
+        border: 3px solid whitesmoke;
+
+  }
+
+h2{
+  display: flex;
+  justify-content: center;
+  color: whitesmoke;
+  margin-bottom: 15px;
+  
+}

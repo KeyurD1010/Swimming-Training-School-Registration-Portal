@@ -1,0 +1,111 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Stripe Node App</title>
+</head>
+<body class="bg-gray-900">
+    <nav class="bg-purple-900 h-20 flex justify-center">
+        <h1 class="text-white text-5xl">Stripe Payment </h1>
+    </nav>
+<div class="flex justify-center mt-32">
+   
+        <form action="/makePay" method="POST" class="flex flex-col w-1/3">
+
+        <input type="number" name="ms" hidden value="<%=maleslot%>">
+        <input type="number" name="fs" hidden value="<%=femaleslot%>">
+
+
+
+    <% for(var i=0;i<(maleslot);i++){%>
+        
+        
+        <input type="text" name="mname" hidden value="<%=malelist[i].name %>">
+       
+        <input type="text" name="memail" hidden value="<%=malelist[i].email %>">
+       
+        <input type="text" name="maddress" hidden value="<%=malelist[i].address %>">
+        
+        <input type="text" name="mcontact" hidden value="<%=malelist[i].contact%>">
+        
+        <input type="number" name="mage" hidden value="<%=malelist[i].age %>">
+
+        <input type="text" name="mbranchname" hidden value="<%=malelist[i].branchname%>">
+
+        <input type="text" name="mstatus" hidden value="<%=malelist[i].status%>">
+
+        <input type="number" name="plan" hidden  value="<%=malelist[i].plan%>">
+        <%}%>
+
+        
+
+        <% for(var i=0;i<(femaleslot);i++){%>
+            
+          
+            <input type="text" name="fname" hidden value="<%=femalelist[i].name %>">
+            
+            <input type="text" name="femail" hidden value="<%=femalelist[i].email %>">
+           
+            <input type="text" name="faddress" hidden value="<%=femalelist[i].address %>">
+            
+            <input type="text" name="fcontact" hidden value="<%=femalelist[i].contact %>">
+            
+            <input type="number" name="fage" hidden value="<%=femalelist[i].age %>">
+
+            <input type="text" name="fbranchname" hidden value="<%=femalelist[i].branchname %>">
+
+             <input type="text" name="fstatus" hidden value="<%=femalelist[i].status%>">
+
+             <input type="number" name="plan" hidden value="<%=femalelist[i].plan %>">
+           
+            <%}%>
+
+
+
+            <input class="bg-transparent text-white p-2 h-10 mb-4" type="text" name="name"  value="<%= username %>" readonly>
+            <input class="bg-transparent text-white p-2 h-10 mb-4" type="text" name="amount" value="<%= amount %>"  readonly >
+            <div id="card-element" class="bg-transparent text-white p-2 h-10 mb-4"></div>
+            <div id="card-errors" role="alert"></div>
+            <button class="text-white bg-purple-900 p-4 rounded">Pay</button>
+        </form>
+    </div>
+</body>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    const stripe = Stripe('<%=key%>');
+const elements = stripe.elements();
+var style = {
+    base: {
+        color: "#fff"
+    }
+}
+const card = elements.create('card', { style });
+card.mount('#card-element');
+const form = document.querySelector('form');
+const errorEl = document.querySelector('#card-errors');
+const stripeTokenHandler = token => {
+    const hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+console.log(form)
+    form.submit();
+}
+form.addEventListener('submit', e => {
+    e.preventDefault();
+stripe.createToken(card).then(res => {
+        if (res.error) errorEl.textContent = res.error.message;
+        else {
+            // console.log(res.token)
+            stripeTokenHandler(res.token);
+        }
+    })
+})
+</script>
+</html>

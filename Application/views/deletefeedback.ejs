@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/feedback.css">
+</head>
+<body>
+
+
+   <% if(feedbacklist.length != 0){ %>
+        
+        <div class="fblist">
+          <h2 id="fb">Feedback List</h2>
+         <% for (const i in feedbacklist) { %>
+          <form action="/delete" method="post">
+
+          <div class="container2"> 
+            <input type="text" value="<%= feedbacklist[i]._id %>" hidden  name="id">
+          <p class="date"><%= feedbacklist[i].date %></p>
+          <p>Username : <%= feedbacklist[i].username %></p> 
+          <p>Rating : <%= feedbacklist[i].rating %>
+          </p>
+          <p> Branch : <%= feedbacklist[i].branch %>
+          </p>
+          <p><%= feedbacklist[i].feedback %>
+          </p>
+          <button type="submit">Delete</button>
+        </div>
+        </form>
+        <% } %>
+        </div>
+        <% }else{ %>
+          <div class="container1">
+          <h2 id="fb">No Feedback Found</h2>
+        </div>
+        <% } %>
+</body>
+</html>

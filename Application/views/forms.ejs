@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/forms.css">
+</head>
+
+  <div class="container">
+    <div class="form-outer">
+      <form action="/submitdetails" method="post">
+        <input type="text" name="maleslot" value="<%=maleSlot%>" hidden>
+        <input type="text" name="femaleslot" value="<%=femaleSlot%>" hidden>
+        <input type="text" name="branchname" value="<%=branchname%>" hidden>
+        <input type="text" name="plan" value="<%=plan%>" hidden>
+        <div class="page">
+          <% for(var i=0;i<(maleSlot);i++){%>
+            <div class="form">
+              <div class="title">Male Form <%= (i + 1) %> / <%= maleSlot %></div>
+              <div class="field">
+                <div class="label">Name</div>
+                <input type="text" name="mname" required>
+              </div>
+              <div class="field">
+                <div class="label">Email</div>
+                <input type="text" name="memail" required>
+              </div>
+              <div class="field">
+                <div class="label">Address</div>
+                <input type="text" name="maddress" required>
+              </div>
+              <div class="field">
+                <div class="label">Contact No</div>
+                <input type="text" name="mcontact" required>
+              </div>
+              <div class="field">
+                <div class="label">Age</div>
+                <input type="number" name="mage" required>
+              </div>
+
+            </div>
+            <%}%>
+              <% for(var i=0;i<(femaleSlot);i++){%>
+                <div class="form">
+                  <div class="title">Female Form <%= (i + 1)%>/<%=femaleSlot%></div>
+                  <div class="field">
+                    <div class="label">Name</div>
+                    <input type="text" name="fname" required>
+                  </div>
+                  <div class="field">
+                    <div class="label">Email</div>
+                    <input type="text" name="femail" required>
+                  </div>
+                  <div class="field">
+                    <div class="label">Address</div>
+                    <input type="text" name="faddress" required>
+                  </div>
+                  <div class="field">
+                    <div class="label">Contact No</div>
+                    <input type="text" name="fcontact" required>
+                  </div>
+                  <div class="field">
+                    <div class="label">Age</div>
+                    <input type="number" name="fage" required>
+                  </div>
+
+                </div>
+
+                <%}%>
+        </div>
+        <div class="sub-btn">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>

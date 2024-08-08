@@ -1,0 +1,85 @@
+body{
+  background-color: lightgray;
+}
+
+.body{
+  width: 80%;
+  margin-left: 10%;
+  background-color: whitesmoke;
+}
+
+.det-he{
+  margin-top: 17px;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  color: navy;
+  margin-bottom: 15px;
+}
+
+.details{    
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 5%;
+
+}
+
+.plan{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 17px
+}
+
+.pay{    
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 17px
+}
+
+.pay-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  text-align: center;
+}
+
+.table-dark {
+  --bs-table-bg: navy;
+}
+
+.info{
+  border-bottom: navy;
+}
+
+.pay-btn button{
+  cursor: pointer;
+    outline: none;
+    width: 200px;
+    height: 7vh;
+    margin: 5%;
+    color: navy;
+  background-color: whitesmoke;
+  border: 3px solid navy;
+  border-radius: 50px;
+  font-size: larger;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.pay-btn button:hover{
+  background-color: navy;
+  color:whitesmoke ;
+  box-shadow: 0 0 10px -1px navy;
+  width: 220px;
+  font-size: 21px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: lightskyblue;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            width: 50%;
+            height: 30%;
+            border-radius: 10px;
+        }
+
+        .container form {
+            margin-top: 5px;
+        }
+
+        .pass {
+            display: flex;
+            margin-top: 20px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .field{
+            margin-top: 20px;
+        }
+
+        .pass input { 
+            height: 100%;
+    width: 380px;
+    height: 30px;
+    border: 3px solid lightgray;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-left: 15px;
+        }
+
+        .btn {
+            width: 20%;
+            height: 40px;
+            outline: none;
+            border-radius: 50px;
+            color: navy;
+            background-color: whitesmoke;
+            border: 3px solid navy;
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+            cursor: pointer;
+            margin-top: 20px;
+            
+        }
+
+        .btn:hover {
+            background-color: navy;
+            color: whitesmoke;
+            box-shadow: 0 0 10px -1px navy;
+
+        }
+        h2{
+            display: flex;
+    justify-content: center;
+        }
+
+        .label{
+            font-size: larger;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2> <%= email%></h2>
+        <form accept="./reset/:_id" method="post">
+            <input type="text" name="email" value="<%=email%>" hidden>
+            <div class="pass">
+                <div class="field">
+                    <div class="label">Password</div>
+                    <input type="password" name="password" required>
+                  </div>
+
+                  <div class="field">
+                    <div class="label">Confirm Password</div>
+                    <input type="password" name="password" required>
+                  </div>
+
+                <button class="btn">Reset Password</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

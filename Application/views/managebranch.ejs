@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/manageBranch.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="addBranch">
+            <form action="/addbranch" method="get">
+                <button type="submit">Add Branch</button>
+            </form>
+        </div>
+        <div class="update">
+            <form action="/updatebranch" method="POST">
+                <select id="selbrach" name="bn">
+                    <option value="Select Branch" hidden>Select Branch</option>
+                    <% for (const i in branchList) { %>
+                        <option value='<%= branchList[i].branchName %>'>
+                            <%= branchList[i].branchName %>
+                        </option>
+                        <% } %>
+                </select>
+                <div class="btn">
+                    <button type="submit">Update Branch</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="fees">
+            <form action="/updatefees" method="POST">
+                <select id="selplan" name="plan">
+                    <option value="" class="selected" disabled selected hidden>Select Plan</option>
+                    <% for (const i in feelist) { %>
+                        <option value='<%= feelist[i].days %>'>
+                            <%= feelist[i].days %>
+                        </option>
+                        <% } %>
+                </select>
+                <div class="btn">
+                    <button type="submit">Update Plan</button>
+                </div>
+            </form>
+        </div>
+
+        
+    </div>
+
+</body>
+
+</html>

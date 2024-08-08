@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/addbranch.css">
+</head>
+<body>
+   <form action="/add" method="post">
+        <div class="add-container">
+            <div class="add-header">
+                <h2>Fill the details of New Branch</h2>
+            </div>
+            <hr>
+            <div class="form">
+            
+                <div class="zone ">
+                    <label for="z">Select Zone:</label>
+                    <select name="zone" class="z">
+                        <option value=""  disabled selected hidden>Select Zone</option>
+                        <option value="Central Zone">Central Zone</option>
+                        <option value="East Zone">East Zone</option>
+                        <option value="West Zone">West Zone</option>
+                        <option value="South Zone">South Zone</option>
+                        <option value="North Zone">North Zone</option>
+                    </select>
+                </div>
+                <div class="name in">
+                    <label for="n">Name:</label>
+                    <input class="n" name="name" type="text">
+                </div>
+                <div class="address in">
+                    <label for="ad">Address:</label>
+                    <input class="ad" name="address" type="text">
+                </div>
+                <div class="contact in">
+                    <label for="co">Contact No:</label>
+                    <input class="co" name="contact" type="text">
+                </div>
+                <div class="Capacity in">
+                    <label for="ca">Capacity:</label>
+                    <input class="ca" type="number" name="slot" min="0">
+                </div>
+                <div class="description in">
+                    <label for="des">Description:</label>
+                    <input class="des" name="description" type="text">
+                </div>
+                <div class="img1 in">
+                    <label for="i1">Image Address:</label>
+                    <input class="i1" name="img1" type="text">
+                </div>
+           
+            </div>
+            <hr>
+            <div class="btn">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+   </form>
+</body>
+</html>

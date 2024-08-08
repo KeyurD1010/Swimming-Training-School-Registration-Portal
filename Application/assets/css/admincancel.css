@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.table {
+    text-align: center;
+  }
+  
+.table-dark {
+    --bs-table-bg: navy;
+}
+
+
+.container2 button{
+    display: none;
+  }
+
+
+.container2:hover button{
+    display: block;
+  }
+
+
+  
